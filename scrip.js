@@ -7,7 +7,9 @@ function consulta(){
     {
         $("<p>Ingrese un nombre</p>").appendTo(".resultado");
         $("#display_txt").val("")
+        console.log("hola");
     }
+    
     else
     {
         $.ajax({
@@ -40,7 +42,7 @@ function consulta(){
             },
             error: function(data){
                 $("<p> Pokemon no Encontado</p>").appendTo(".resultado");
-            }
+            },
 
         });
     }
@@ -51,6 +53,5 @@ function limpiar()
     console.log("hola");
     $(".resultado").children().remove();
     $(".pokemon").children().remove();
-    $(".resultado").fadeOut().removeClass("animate__animated animate__bounce");
-    $(".pokemon").fadeOut().removeClass("animate__animated animate__bounce");
+   
 }
