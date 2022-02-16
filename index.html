@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,8 +15,13 @@
             <button id="consulta" onclick="consulta()">Request</button>
         </div>
         <img src="img/pokeball.jpg" alt="">
-        <div class="resultado"></div>
-        <img id="logo"src="img/poke.png" alt="">
+        <div class="display_resultado">
+            <div class="resultado" style="display: none;">   
+            </div>
+            <div class="pokemon"></div>
+            
+        </div>
+        <div><img id="logo"src="img/poke.png" alt=""></div>
     </div>
  
     
