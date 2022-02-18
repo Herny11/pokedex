@@ -7,7 +7,8 @@ function consulta(){
     {
         $("<p>Ingrese un nombre</p>").appendTo(".resultado");
         $("#display_txt").val("")
-        console.log("hola");
+        $(".resultado").fadeIn("fast")
+        
     }
     
     else
@@ -29,12 +30,11 @@ function consulta(){
 
                     $(".resultado").delay(100).fadeIn("slow").addClass("animate__animated animate__bounce");
                     $(".pokemon").delay(100).fadeIn("slow").addClass("animate__animated animate__bounce");
-                    nombre = $("<p>Name: " + data.name + "</p>").appendTo(".resultado");
-                    id= $("<p>Id: " + data.id + "</p>").appendTo(".resultado");
+                    $("<p>Name: " + data.name + "</p>").appendTo(".resultado");
+                    $("<p>Id: " + data.id + "</p>").appendTo(".resultado");
                     for (i; i < type; i++)
                     {
                         $("<p>Attack " + (i+1) +": " + data.abilities[i].ability.name + "</p>").appendTo(".resultado");
-                        console.log(data.abilities[i].ability.name)
                     }
                     image=$("<img style= 'width:150px; heigth:150px' src='" + data.sprites.front_shiny + "'/>").appendTo(".pokemon");  
                 }
@@ -42,6 +42,7 @@ function consulta(){
             },
             error: function(data){
                 $("<p> Pokemon no Encontado</p>").appendTo(".resultado");
+                $(".resultado").fadeIn("fast")
             },
 
         });
@@ -50,8 +51,6 @@ function consulta(){
 
 function limpiar()
 {
-    console.log("hola");
     $(".resultado").children().remove();
     $(".pokemon").children().remove();
-   
 }
